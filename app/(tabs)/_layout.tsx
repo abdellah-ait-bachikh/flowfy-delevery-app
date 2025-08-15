@@ -1,45 +1,161 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
-import { Platform } from 'react-native';
-
-import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';
-import TabBarBackground from '@/components/ui/TabBarBackground';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { Tabs } from "expo-router";
+import React from "react";
+import { Platform, Text } from "react-native";
+import { Feather, FontAwesome, Ionicons, Octicons } from "@expo/vector-icons";
+import { AnimatedTabLabel } from "@/components/ui/AnimatedTabItem";
+import { useTranslation } from "react-i18next";
+import Header from "@/components/ui/Header";
+import { colors } from "@/constants/const";
 
 export default function TabLayout() {
-  const colorScheme = useColorScheme();
+  const { t, i18n } = useTranslation();
+  const rtl = i18n.language === "ar";
+
+  const tabOrder = ["index", "search", "bag", "notifications", "profile"];
 
   return (
-    <Tabs
-      screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-        tabBarButton: HapticTab,
-        tabBarBackground: TabBarBackground,
-        tabBarStyle: Platform.select({
-          ios: {
-            // Use a transparent background on iOS to show the blur effect
-            position: 'absolute',
+    <>
+      <Header />
+      <Tabs
+        initialRouteName="index"
+        key={i18n.language} // <- add this line
+        screenOptions={{
+          tabBarActiveTintColor: "black",
+          animation: "shift",
+          headerShown: false,
+          tabBarStyle: {
+            backgroundColor: colors.thinZinc,
+            height: 110,
+            position: Platform.OS === "ios" ? "absolute" : "relative",
+            paddingTop: 10,
+            flexDirection: rtl ? "row-reverse" : "row", // Add this
+            direction: rtl ? "rtl" : "ltr", // Add this for proper RTL layout
           },
-          default: {},
-        }),
-      }}>
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
         }}
-      />
-      <Tabs.Screen
-        name="explore"
-        options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
-        }}
-      />
-    </Tabs>
+      >
+        {tabOrder.map((name) => {
+          if (name === "index")
+            return (
+              <Tabs.Screen
+                key={name}
+                name="index"
+                options={{
+                  tabBarBadge: 12,
+                  title: "Home",
+                  tabBarLabel: ({ focused }) => (
+                    <AnimatedTabLabel
+                      focused={focused}
+                      title={t("tabs.home", "Home")}
+                    />
+                  ),
+                  tabBarIcon: ({ focused }) => (
+                    <Feather
+                      size={28}
+                      name="home"
+                      color={focused ? colors.PrimaryYello : colors.black}
+                    />
+                  ),
+                }}
+              />
+            );
+
+          if (name === "search")
+            return (
+              <Tabs.Screen
+                key={name}
+                name="search"
+                options={{
+                  title: "Search",
+                  tabBarLabel: ({ focused }) => (
+                    <AnimatedTabLabel
+                      focused={focused}
+                      title={t("tabs.search", "Search")}
+                    />
+                  ),
+                  tabBarIcon: ({ focused }) => (
+                    <FontAwesome
+                      size={28}
+                      name="search"
+                      color={focused ? colors.PrimaryYello : colors.black}
+                    />
+                  ),
+                }}
+              />
+            );
+
+          if (name === "bag")
+            return (
+              <Tabs.Screen
+                key={name}
+                name="bag"
+                options={{
+                  title: "Bag",
+                  tabBarLabel: ({ focused }) => (
+                    <AnimatedTabLabel
+                      focused={focused}
+                      title={t("tabs.bag", "Bag")}
+                    />
+                  ),
+                  tabBarIcon: ({ focused }) => (
+                    <Feather
+                      size={28}
+                      name="shopping-cart"
+                      color={focused ? colors.PrimaryYello : colors.black}
+                    />
+                  ),
+                }}
+              />
+            );
+
+          if (name === "notifications")
+            return (
+              <Tabs.Screen
+                key={name}
+                name="notifications"
+                options={{
+                  title: "Notifications",
+                  tabBarLabel: ({ focused }) => (
+                    <AnimatedTabLabel
+                      focused={focused}
+                      title={t("tabs.notifications", "Notifications")}
+                    />
+                  ),
+                  tabBarIcon: ({ focused }) => (
+                    <Ionicons
+                      size={28}
+                      name="notifications-outline"
+                      color={focused ? colors.PrimaryYello : colors.black}
+                    />
+                  ),
+                }}
+              />
+            );
+
+          if (name === "profile")
+            return (
+              <Tabs.Screen
+                key={name}
+                name="profile"
+                options={{
+                  title: "Profile",
+                  tabBarLabel: ({ focused }) => (
+                    <AnimatedTabLabel
+                      focused={focused}
+                      title={t("tabs.profile", "Profile")}
+                    />
+                  ),
+                  tabBarIcon: ({ focused }) => (
+                    <Octicons
+                      size={28}
+                      name="person"
+                      color={focused ? colors.PrimaryYello : colors.black}
+                    />
+                  ),
+                }}
+              />
+            );
+        })}
+      </Tabs>
+    </>
   );
 }

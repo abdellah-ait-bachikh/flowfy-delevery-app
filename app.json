@@ -16,7 +16,8 @@
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "edgeToEdgeEnabled": true
+      "edgeToEdgeEnabled": true,
+      "package": "com.abdellah_bachikh.notificationstest"
     },
     "web": {
       "bundler": "metro",
@@ -37,6 +38,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "supportsRTL": true,
+      "allowRTL": true,
+      "router": {},
+      "eas": {
+        "projectId": "ae4fe56a-5054-4897-a671-05cdc7163744"
+      }
     }
   }
 }
