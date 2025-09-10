@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { colors } from "@/constants/const";
 import { useRouter } from "expo-router";
 import { user } from "@/constants/const";
+import LinearGradientCmp from "@/components/ui/LinearGradientCmp";
 
 const ProfileDetails = () => {
   const router = useRouter();
@@ -12,16 +13,9 @@ const ProfileDetails = () => {
       router.replace(`/profile/${21}`);
     }
   }, []);
- if (user) return null;
+  if (user) return null;
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: colors.white,
-      }}
-    >
+    <View style={{ display: "flex",backgroundColor: "transparent" ,flex:1 }}>
       <Text>Profile default</Text>
     </View>
   );

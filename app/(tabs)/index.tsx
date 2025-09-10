@@ -1,27 +1,297 @@
-import { View, Text, Pressable } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
-import { colors } from "@/constants/const";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
+import LinearGradientCmp from "@/components/ui/LinearGradientCmp";
 
 const Index = () => {
-  const { t, i18n } = useTranslation();
-  const rtl = i18n.language === "ar";
+  const { t } = useTranslation();
+ 
 
   return (
-    <View
-      style={{
-        flex: 1,
-        backgroundColor: colors.white,
-        alignItems: rtl ? "flex-end" : "flex-start",
-      }}
-    >
-      <View style={{ display: "flex" }}>
+   <ScrollView style={{ display: "flex",backgroundColor: "transparent" ,flex:1, }}>
+        <View  style={{height:1852}}>
+
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
+        <Text> {t("screens.(tabs).index.title")} </Text>
+      </View>
+      <View >
         <Text> {t("screens.(tabs).index.title")} </Text>
       </View>
 
       <LanguageSwitcher />
-    </View>
+        </View>
+   </ScrollView>
   );
 };
 

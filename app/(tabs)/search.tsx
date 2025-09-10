@@ -2,19 +2,14 @@ import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { colors } from "@/constants/const";
 import { useTranslation } from "react-i18next";
+import LinearGradientCmp from "@/components/ui/LinearGradientCmp";
 
 
 const search = () => {
     const { t, i18n } = useTranslation();
     const rtl = i18n.language === "ar";
   return (
-    <View
-      style={{
-             flex: 1,
-             justifyContent: "center",
-             alignItems: "center",backgroundColor:colors.white
-           }}
-    >
+     <View style={{ display: "flex",backgroundColor: "transparent" ,flex:1 }}>
       <Text>{t("screens.(tabs).search.title")} </Text>
     </View>
   );

@@ -1,11 +1,12 @@
 import { Tabs } from "expo-router";
 import React from "react";
-import { Platform, Text } from "react-native";
+import { Platform, Text, TouchableOpacity } from "react-native";
 import { Feather, FontAwesome, Ionicons, Octicons } from "@expo/vector-icons";
 import { AnimatedTabLabel } from "@/components/ui/AnimatedTabItem";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/ui/Header";
 import { colors } from "@/constants/const";
+import LinearGradientCmp from "@/components/ui/LinearGradientCmp";
 
 export default function TabLayout() {
   const { t, i18n } = useTranslation();
@@ -14,7 +15,7 @@ export default function TabLayout() {
   const tabOrder = ["index", "search", "bag", "notifications", "profile"];
 
   return (
-    <>
+    <LinearGradientCmp colors={[colors.primaryGradian, colors.socondaryGradian, colors.socondaryGradian, colors.socondaryGradian, colors.socondaryGradian, colors.primaryGradian]}>
       <Header />
       <Tabs
         initialRouteName="index"
@@ -24,12 +25,21 @@ export default function TabLayout() {
           animation: "shift",
           headerShown: false,
           tabBarStyle: {
-            backgroundColor: colors.thinZinc,
+            backgroundColor: "transparent",
             height: 110,
             position: Platform.OS === "ios" ? "absolute" : "relative",
             paddingTop: 10,
             flexDirection: rtl ? "row-reverse" : "row", // Add this
             direction: rtl ? "rtl" : "ltr", // Add this for proper RTL layout
+            borderTopWidth: 0,
+            elevation: 0,
+            shadowOpacity: 0,
+          },
+          sceneStyle: {
+            backgroundColor: "transparent",
+          },
+          tabBarButton: (props) => {
+            return <TouchableOpacity {...(props as any)} activeOpacity={1} />;
           },
         }}
       >
@@ -52,7 +62,7 @@ export default function TabLayout() {
                     <Feather
                       size={28}
                       name="home"
-                      color={focused ? colors.PrimaryYello : colors.black}
+                      color={focused ? colors.primaryRoodGradian : colors.black}
                     />
                   ),
                 }}
@@ -76,7 +86,7 @@ export default function TabLayout() {
                     <FontAwesome
                       size={28}
                       name="search"
-                      color={focused ? colors.PrimaryYello : colors.black}
+                      color={focused ? colors.primaryRoodGradian : colors.black}
                     />
                   ),
                 }}
@@ -100,7 +110,7 @@ export default function TabLayout() {
                     <Feather
                       size={28}
                       name="shopping-cart"
-                      color={focused ? colors.PrimaryYello : colors.black}
+                      color={focused ? colors.primaryRoodGradian : colors.black}
                     />
                   ),
                 }}
@@ -124,7 +134,7 @@ export default function TabLayout() {
                     <Ionicons
                       size={28}
                       name="notifications-outline"
-                      color={focused ? colors.PrimaryYello : colors.black}
+                      color={focused ? colors.primaryRoodGradian : colors.black}
                     />
                   ),
                 }}
@@ -148,7 +158,7 @@ export default function TabLayout() {
                     <Octicons
                       size={28}
                       name="person"
-                      color={focused ? colors.PrimaryYello : colors.black}
+                      color={focused ? colors.primaryRoodGradian : colors.black}
                     />
                   ),
                 }}
@@ -156,6 +166,6 @@ export default function TabLayout() {
             );
         })}
       </Tabs>
-    </>
+    </LinearGradientCmp>
   );
 }

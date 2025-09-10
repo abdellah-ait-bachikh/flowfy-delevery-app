@@ -8,12 +8,7 @@ const ProfileDetails = () => {
 
   return (
     <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: colors.white,
-      }}
+     style={{ display: "flex",backgroundColor: "transparent" ,flex:1 }}
     >
       <Text>Profile id = {id}</Text>
     </View>

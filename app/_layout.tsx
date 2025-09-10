@@ -4,6 +4,8 @@ import { Stack } from "expo-router";
 import "react-native-reanimated";
 import { initI18next } from "../services/i18next";
 import { initNotifications } from "../services/notifications";
+import LinearGradientCmp from "@/components/ui/LinearGradientCmp";
+import { colors } from "@/constants/const";
 
 export default function RootLayout() {
   const [loaded] = useFonts({
@@ -44,13 +46,20 @@ export default function RootLayout() {
   }
 
   return (
-    <Stack
-      screenOptions={{ animation: "fade_from_bottom" }}
-      initialRouteName="index"
-    >
-      <Stack.Screen name="index" options={{ headerShown: false }} />
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="+not-found" options={{ headerShown: false }} />
-    </Stack>
+    <LinearGradientCmp colors={[colors.primaryRoodGradian, colors.socondaryRoodGradian]}>
+      <Stack
+        screenOptions={{
+          animation: "fade_from_bottom",
+          contentStyle: {
+            backgroundColor: "transparent",
+          },
+        }}
+        initialRouteName="index"
+      >
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="+not-found" options={{ headerShown: false }} />
+      </Stack>
+    </LinearGradientCmp>
   );
 }

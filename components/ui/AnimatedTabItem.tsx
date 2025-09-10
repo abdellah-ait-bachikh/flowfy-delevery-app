@@ -11,7 +11,7 @@ export const AnimatedTabLabel = ({ focused, title }: { focused: boolean; title: 
   const fontSize = useSharedValue(focused ? 11 : 9);
   const animatedStyle = useAnimatedStyle(() => ({
     fontSize: withTiming(fontSize.value, { duration: 150 }),
-     color: focused ? colors.PrimaryYello : colors.black,
+     color: focused ? colors.primaryRoodGradian : colors.black,
      marginTop: 5,
   }));
 

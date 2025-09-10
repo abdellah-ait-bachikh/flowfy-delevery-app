@@ -27,10 +27,8 @@ const Header = () => {
   };
   return (
     <>
-      <StatusBar style="auto" />
-      <View
-        style={{ paddingTop: insets.top, backgroundColor: colors.thinZinc }}
-      >
+      <StatusBar  style="light" translucent />
+      <View style={{ paddingTop: insets.top, backgroundColor: "transparent" }}>
         <View
           style={{
             flexDirection: isRTL ? "row-reverse" : "row",

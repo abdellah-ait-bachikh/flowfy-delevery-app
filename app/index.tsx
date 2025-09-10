@@ -12,7 +12,8 @@ const WelcomePage = () => {
       style={{
         flex: 1,
         justifyContent: "center",
-        alignItems: "center",backgroundColor:colors.PrimaryYello
+        alignItems: "center",
+        backgroundColor: "transparent",
       }}
     >
       <Text> {t("screens.root.index.title")} </Text>
@@ -20,13 +21,19 @@ const WelcomePage = () => {
         href={"/(tabs)"}
         style={{
           padding: 10,
-          backgroundColor: "red",
-          borderRadius: 5,
+          borderRadius: 9,
+          backgroundColor: "rgba(255, 255, 255, 0.5)", // 50% white transparent
+          borderColor: "rgba(167, 167, 167, 0.5)", // optional border with 50% opacity
+          borderWidth: 2,
+          textAlign: "center",
+          fontSize: 20,
+          fontWeight: "600",
+          color: "#00000081",
         }}
       >
         {t("screens.root.index.explor_app")}
       </Link>
-      <LanguageSwitcher />
+      {/* <LanguageSwitcher /> */}
     </View>
   );
 };
