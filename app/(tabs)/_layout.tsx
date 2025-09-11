@@ -1,7 +1,13 @@
 import { Tabs } from "expo-router";
 import React from "react";
 import { Platform, Text, TouchableOpacity } from "react-native";
-import { Feather, FontAwesome, Ionicons, Octicons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  Feather,
+  FontAwesome,
+  Ionicons,
+  Octicons,
+} from "@expo/vector-icons";
 import { AnimatedTabLabel } from "@/components/ui/AnimatedTabItem";
 import { useTranslation } from "react-i18next";
 import Header from "@/components/ui/Header";
@@ -15,13 +21,24 @@ export default function TabLayout() {
   const tabOrder = ["index", "search", "bag", "notifications", "profile"];
 
   return (
-    <LinearGradientCmp colors={[colors.primaryGradian, colors.socondaryGradian, colors.socondaryGradian, colors.socondaryGradian, colors.socondaryGradian, colors.primaryGradian]}>
+    <LinearGradientCmp
+      colors={[
+        colors.lightPerpel,
+        colors.socondaryGradian,
+        colors.socondaryGradian,
+        colors.socondaryGradian,
+        colors.socondaryGradian,
+        colors.socondaryGradian,
+        colors.socondaryGradian,
+        colors.lightPerpel,
+      ]}
+    >
       <Header />
       <Tabs
         initialRouteName="index"
         key={i18n.language} // <- add this line
         screenOptions={{
-          tabBarActiveTintColor: "black",
+          tabBarActiveTintColor: "perpel",
           animation: "shift",
           headerShown: false,
           tabBarStyle: {
@@ -62,7 +79,7 @@ export default function TabLayout() {
                     <Feather
                       size={28}
                       name="home"
-                      color={focused ? colors.primaryRoodGradian : colors.black}
+                      color={focused ? colors.black : colors.perpel}
                     />
                   ),
                 }}
@@ -83,10 +100,10 @@ export default function TabLayout() {
                     />
                   ),
                   tabBarIcon: ({ focused }) => (
-                    <FontAwesome
+                    <AntDesign
                       size={28}
-                      name="search"
-                      color={focused ? colors.primaryRoodGradian : colors.black}
+                      name="search1"
+                      color={focused ? colors.black : colors.perpel}
                     />
                   ),
                 }}
@@ -110,7 +127,7 @@ export default function TabLayout() {
                     <Feather
                       size={28}
                       name="shopping-cart"
-                      color={focused ? colors.primaryRoodGradian : colors.black}
+                      color={focused ? colors.black : colors.perpel}
                     />
                   ),
                 }}
@@ -134,7 +151,7 @@ export default function TabLayout() {
                     <Ionicons
                       size={28}
                       name="notifications-outline"
-                      color={focused ? colors.primaryRoodGradian : colors.black}
+                      color={focused ? colors.black : colors.perpel}
                     />
                   ),
                 }}
@@ -158,7 +175,7 @@ export default function TabLayout() {
                     <Octicons
                       size={28}
                       name="person"
-                      color={focused ? colors.primaryRoodGradian : colors.black}
+                      color={focused ? colors.black : colors.perpel}
                     />
                   ),
                 }}

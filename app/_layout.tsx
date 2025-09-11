@@ -46,7 +46,7 @@ export default function RootLayout() {
   }
 
   return (
-    <LinearGradientCmp colors={[colors.primaryRoodGradian, colors.socondaryRoodGradian]}>
+    <LinearGradientCmp colors={[colors.perpel, colors.white]}>
       <Stack
         screenOptions={{
           animation: "fade_from_bottom",

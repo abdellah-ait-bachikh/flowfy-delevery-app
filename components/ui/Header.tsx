@@ -3,7 +3,7 @@ import { StatusBar } from "expo-status-bar";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { colors } from "@/constants/const";
 import { usePathname, useRouter, useSegments } from "expo-router";
-import { MaterialIcons } from "@expo/vector-icons";
+import { Entypo, MaterialIcons } from "@expo/vector-icons";
 import { useTranslation } from "react-i18next";
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
   };
   return (
     <>
-      <StatusBar  style="light" translucent />
+      <StatusBar style="light" translucent />
       <View style={{ paddingTop: insets.top, backgroundColor: "transparent" }}>
         <View
           style={{
@@ -52,7 +52,18 @@ const Header = () => {
             </Pressable>
           </View>
           <View>
-            <Text>test</Text>
+            <Pressable
+              onPress={(handleBack=>{})}
+              style={{
+                padding: 10,
+                justifyContent: "center",
+                alignItems: "center",
+                // backgroundColor:"#ffffffff",
+                borderRadius:"50%"
+              }}
+            >
+            <Entypo name="location" size={25} color="black" />
+            </Pressable>
           </View>
         </View>
       </View>

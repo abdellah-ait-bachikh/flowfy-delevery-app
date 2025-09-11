@@ -1,43 +1,68 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import LanguageSwitcher from "@/components/ui/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
 import { colors } from "@/constants/const";
-
+import logo from "../assets/images/main_logo.png";
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 const WelcomePage = () => {
   const { t } = useTranslation();
+  const insets = useSafeAreaInsets();
+
+  const router = useRouter();
+  const handelNavigate = () => {
+    router.push("/(tabs)");
+  };
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "transparent",
-      }}
-    >
-      <Text> {t("screens.root.index.title")} </Text>
-      <Link
-        href={"/(tabs)"}
-        style={{
-          padding: 10,
-          borderRadius: 9,
-          backgroundColor: "rgba(255, 255, 255, 0.5)", // 50% white transparent
-          borderColor: "rgba(167, 167, 167, 0.5)", // optional border with 50% opacity
-          borderWidth: 2,
-          textAlign: "center",
-          fontSize: 20,
-          fontWeight: "600",
-          color: "#00000081",
-        }}
+    <View style={styles.container}>
+      <View style={[styles.languageSwitcher, { top: insets.top + 20 }]}>
+        <Text>ln dsd</Text>
+      </View>
+      <Image source={logo} style={styles.logo} />
+      <TouchableOpacity
+        activeOpacity={0.5}
+        style={styles.button}
+        onPress={handelNavigate}
       >
-        {t("screens.root.index.explor_app")}
-      </Link>
-      {/* <LanguageSwitcher /> */}
+        <Text style={styles.btnText}>{t("screens.root.index.explor_app")}</Text>
+      </TouchableOpacity>
     </View>
   );
 };
 
 export default WelcomePage;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "transparent",
+    gap: 20,
+    position: "relative",
+  },
+  languageSwitcher: {
+    position: "absolute",
+  },
+  logo: {
+    width: 200,
+    height: 200,
+    resizeMode: "contain",
+  },
+  button: {
+    paddingVertical: 14,
+    paddingHorizontal: 30,
+    borderRadius: 30,
+    borderWidth: 2,
+    borderColor: colors.perpel,
+    shadowColor: "#ffffffff",
+    shadowOpacity: 0.5,
+    shadowOffset: { width: 0, height: 9 },
+    shadowRadius: 6,
+    elevation: 5,
+  },
+  btnText: {
+    color: colors.perpel,
+  },
+});
